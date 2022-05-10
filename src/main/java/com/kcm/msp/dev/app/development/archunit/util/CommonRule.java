@@ -1,0 +1,29 @@
+package com.kcm.msp.dev.app.development.archunit.util;
+
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.methods;
+
+import com.tngtech.archunit.lang.ArchRule;
+import java.util.Arrays;
+
+public final class CommonRule {
+
+  public static final String CONTROLLER_PACKAGE = "..controller..";
+  public static final String SERVICE_PACKAGE = "..service..";
+  public static final String REPOSITORY_PACKAGE = "..repository..";
+  public static final String CONTROLLER_NAME_ENDS = "Controller";
+  public static final String SERVICE_NAME_ENDS = "Service";
+
+  private CommonRule() {
+    throw new UnsupportedOperationException();
+  }
+
+  public static ArchRule methodsShouldBePublicRule(String... packageNames) {
+    return methods()
+        .that()
+        .areDeclaredInClassesThat()
+        .resideInAnyPackage(packageNames)
+        .should()
+        .bePublic()
+        .because("Public methods are only allowed in " + Arrays.toString(packageNames));
+  }
+}

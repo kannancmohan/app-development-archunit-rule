@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.kcm.msp.dev</groupId>
+  <artifactId>app-development-archunit-rule</artifactId>
+  <version>${revision}</version>
+
+  <properties>
+    <revision>0.0.1-SNAPSHOT</revision>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <archunit.version>0.23.1</archunit.version>
+  </properties>
+
+  <dependencies>
+  <dependency>
+    <groupId>com.tngtech.archunit</groupId>
+    <artifactId>archunit</artifactId>
+    <version>${archunit.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>com.tngtech.archunit</groupId>
+    <artifactId>archunit-junit5</artifactId>
+    <version>${archunit.version}</version>
+  </dependency>
+  </dependencies>
+
+</project>
