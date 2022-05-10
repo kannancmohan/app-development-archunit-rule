@@ -1,0 +1,1 @@
+# app-development-archunit-rule
