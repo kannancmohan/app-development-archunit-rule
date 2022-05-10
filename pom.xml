@@ -12,20 +12,29 @@
     <revision>0.0.1-SNAPSHOT</revision>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <archunit.version>0.23.1</archunit.version>
   </properties>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.kcm.msp.dev</groupId>
+        <artifactId>app-development-parent-pom</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
-  <dependency>
-    <groupId>com.tngtech.archunit</groupId>
-    <artifactId>archunit</artifactId>
-    <version>${archunit.version}</version>
-  </dependency>
-  <dependency>
-    <groupId>com.tngtech.archunit</groupId>
-    <artifactId>archunit-junit5</artifactId>
-    <version>${archunit.version}</version>
-  </dependency>
+    <dependency>
+      <groupId>com.tngtech.archunit</groupId>
+      <artifactId>archunit</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.tngtech.archunit</groupId>
+      <artifactId>archunit-junit5</artifactId>
+    </dependency>
   </dependencies>
 
 </project>
