@@ -2,6 +2,7 @@ package com.kcm.msp.dev.app.development.archunit.rule.rules;
 
 import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.CONTROLLER_NAME_ENDS;
 import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.CONTROLLER_PACKAGE;
+import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.SERVICE_IMPL_NAME_ENDS;
 import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.SERVICE_NAME_ENDS;
 import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.SERVICE_PACKAGE;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
@@ -22,5 +23,7 @@ public class ClassNamingRule {
           .that()
           .resideInAPackage(SERVICE_PACKAGE)
           .should()
-          .haveSimpleNameEndingWith(SERVICE_NAME_ENDS);
+          .haveSimpleNameEndingWith(SERVICE_NAME_ENDS)
+          .orShould()
+          .haveSimpleNameEndingWith(SERVICE_IMPL_NAME_ENDS);
 }

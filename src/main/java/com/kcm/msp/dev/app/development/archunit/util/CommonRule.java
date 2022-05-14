@@ -12,6 +12,7 @@ public final class CommonRule {
   public static final String REPOSITORY_PACKAGE = "..repository..";
   public static final String CONTROLLER_NAME_ENDS = "Controller";
   public static final String SERVICE_NAME_ENDS = "Service";
+  public static final String SERVICE_IMPL_NAME_ENDS = "ServiceImpl";
 
   private CommonRule() {
     throw new UnsupportedOperationException();
