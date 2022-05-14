@@ -1,4 +1,4 @@
-package com.kcm.msp.dev.app.development.archunit.util;
+package com.kcm.msp.dev.app.development.archunit.rule.util;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.methods;
 

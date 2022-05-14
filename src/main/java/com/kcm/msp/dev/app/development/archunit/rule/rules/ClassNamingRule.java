@@ -1,10 +1,10 @@
 package com.kcm.msp.dev.app.development.archunit.rule.rules;
 
-import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.CONTROLLER_NAME_ENDS;
-import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.CONTROLLER_PACKAGE;
-import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.SERVICE_IMPL_NAME_ENDS;
-import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.SERVICE_NAME_ENDS;
-import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.SERVICE_PACKAGE;
+import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.CONTROLLER_NAME_ENDS;
+import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.CONTROLLER_PACKAGE;
+import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.SERVICE_IMPL_NAME_ENDS;
+import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.SERVICE_NAME_ENDS;
+import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.SERVICE_PACKAGE;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
 import com.tngtech.archunit.lang.ArchRule;

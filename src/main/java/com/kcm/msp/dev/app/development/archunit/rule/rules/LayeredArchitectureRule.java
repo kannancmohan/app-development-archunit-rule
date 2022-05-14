@@ -1,8 +1,8 @@
 package com.kcm.msp.dev.app.development.archunit.rule.rules;
 
-import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.CONTROLLER_PACKAGE;
-import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.REPOSITORY_PACKAGE;
-import static com.kcm.msp.dev.app.development.archunit.util.CommonRule.SERVICE_PACKAGE;
+import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.CONTROLLER_PACKAGE;
+import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.REPOSITORY_PACKAGE;
+import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.SERVICE_PACKAGE;
 import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
 
 import com.tngtech.archunit.lang.ArchRule;
