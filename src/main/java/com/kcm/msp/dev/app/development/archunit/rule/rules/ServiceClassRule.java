@@ -9,15 +9,15 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 import com.tngtech.archunit.lang.ArchRule;
 import org.springframework.stereotype.Service;
 
-public class ServiceRule {
-  public static final ArchRule SERVICE_SHOULD_BE_SUFFIXED =
+public class ServiceClassRule {
+  public static final ArchRule CLASS_SHOULD_BE_SUFFIXED =
       classes()
           .that()
           .resideInAPackage(SERVICE_PACKAGE)
           .should()
           .haveSimpleNameEndingWith(SERVICE_NAME_ENDS);
 
-  public static final ArchRule SERVICE_IMPL_SHOULD_BE_SUFFIXED =
+  public static final ArchRule CLASS_IMPL_SHOULD_BE_SUFFIXED_AND_ANNOTATED =
       classes()
           .that()
           .resideInAPackage(SERVICE_IMPL_PACKAGE)

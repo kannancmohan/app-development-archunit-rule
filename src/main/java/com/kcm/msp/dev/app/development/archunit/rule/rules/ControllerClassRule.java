@@ -7,9 +7,9 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 import com.tngtech.archunit.lang.ArchRule;
 import org.springframework.web.bind.annotation.RestController;
 
-public class ControllerRule {
+public class ControllerClassRule {
 
-  public static final ArchRule NAME_SHOULD_BE_SUFFIXED =
+  public static final ArchRule CLASS_SHOULD_BE_SUFFIXED_AND_ANNOTATED =
       classes()
           .that()
           .resideInAPackage(CONTROLLER_PACKAGE)
