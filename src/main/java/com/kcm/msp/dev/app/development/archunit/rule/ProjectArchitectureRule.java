@@ -4,9 +4,9 @@ import static com.tngtech.archunit.base.DescribedPredicate.not;
 import static com.tngtech.archunit.core.domain.JavaClass.Predicates.simpleName;
 import static com.tngtech.archunit.lang.conditions.ArchPredicates.are;
 
-import com.kcm.msp.dev.app.development.archunit.rule.rules.ControllerRule;
+import com.kcm.msp.dev.app.development.archunit.rule.rules.ControllerClassRule;
 import com.kcm.msp.dev.app.development.archunit.rule.rules.LayeredArchitectureRule;
-import com.kcm.msp.dev.app.development.archunit.rule.rules.ServiceRule;
+import com.kcm.msp.dev.app.development.archunit.rule.rules.ServiceClassRule;
 import com.kcm.msp.dev.app.development.archunit.rule.rules.UnUsedClassRule;
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
@@ -25,19 +25,18 @@ public class ProjectArchitectureRule {
           .withImportOption(Predefined.DO_NOT_INCLUDE_TESTS)
           .withImportOption(Predefined.DO_NOT_INCLUDE_JARS)
           .importPath(".")
-          //.that(are(not(beAnnotate)))
+          // .that(are(not(beAnnotate)))
           .that(are(not(simpleName("ApiUtil"))));
-
 
   @ArchTest
   public static void controllerRule(JavaClasses classes) {
-    ControllerRule.NAME_SHOULD_BE_SUFFIXED.check(classes);
+    ControllerClassRule.CLASS_SHOULD_BE_SUFFIXED_AND_ANNOTATED.check(classes);
   }
 
   @ArchTest
   public static void serviceRule(JavaClasses classes) {
-    ServiceRule.SERVICE_IMPL_SHOULD_BE_SUFFIXED.check(classes);
-    ServiceRule.SERVICE_SHOULD_BE_SUFFIXED.check(classes);
+    ServiceClassRule.CLASS_IMPL_SHOULD_BE_SUFFIXED_AND_ANNOTATED.check(classes);
+    ServiceClassRule.CLASS_SHOULD_BE_SUFFIXED.check(classes);
   }
 
   @ArchTest
