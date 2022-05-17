@@ -28,11 +28,11 @@ public class UnUsedClassRule {
                 .anyMatch(annotation -> annotation.getRawType().getFullName().endsWith(suffix)));
   }
 
-  private final static ArchCondition<JavaClass> shouldBeReferencedClass =
+  private static final ArchCondition<JavaClass> shouldBeReferencedClass =
       new ArchCondition<>("not be unreferenced") {
         @Override
         public void check(JavaClass javaClass, ConditionEvents events) {
-          Set<JavaAccess<?>> accesses = new HashSet<>(javaClass.getAccessesToSelf());
+          final Set<JavaAccess<?>> accesses = new HashSet<>(javaClass.getAccessesToSelf());
           accesses.removeAll(javaClass.getAccessesFromSelf());
           if (accesses.isEmpty() && javaClass.getDirectDependenciesToSelf().isEmpty()) {
             events.add(
@@ -52,6 +52,11 @@ public class UnUsedClassRule {
           .areNotMetaAnnotatedWith(org.springframework.context.annotation.Configuration.class)
           .and()
           .areNotMetaAnnotatedWith(org.springframework.stereotype.Controller.class)
+          .and()
+          .areNotMetaAnnotatedWith(org.springframework.web.bind.annotation.RestController.class)
+          .and()
+          .areNotMetaAnnotatedWith(
+              org.springframework.web.bind.annotation.RestControllerAdvice.class)
           .and(
               not(
                   classHasMethodWithAnnotationThatEndsWith("Handler")
