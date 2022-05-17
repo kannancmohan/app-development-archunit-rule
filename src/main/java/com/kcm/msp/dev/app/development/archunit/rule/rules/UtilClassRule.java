@@ -26,7 +26,8 @@ public class UtilClassRule {
           .andShould()
           .haveOnlyPrivateConstructors()
           .andShould()
-          .haveModifier(FINAL);
+          .haveModifier(FINAL)
+          .because("Util class has to be final and constructor should be declared private");
   public static final ArchRule METHODS_SHOULD_BE_STATIC =
       methods()
           .that()
