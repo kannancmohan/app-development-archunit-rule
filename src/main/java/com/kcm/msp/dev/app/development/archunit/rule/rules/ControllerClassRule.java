@@ -17,4 +17,12 @@ public class ControllerClassRule {
           .beAnnotatedWith(RestController.class)
           .andShould()
           .haveSimpleNameEndingWith(CONTROLLER_NAME_ENDS);
+  public static final ArchRule CLASS_SHOULD_RESIDE_IN_PACKAGE =
+      classes()
+          .that()
+          .haveSimpleNameEndingWith(CONTROLLER_NAME_ENDS)
+          .or()
+          .areAnnotatedWith(RestController.class)
+          .should()
+          .resideInAnyPackage(CONTROLLER_PACKAGE);
 }

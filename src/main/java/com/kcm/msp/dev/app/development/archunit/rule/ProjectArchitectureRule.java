@@ -8,6 +8,7 @@ import com.kcm.msp.dev.app.development.archunit.rule.rules.ControllerClassRule;
 import com.kcm.msp.dev.app.development.archunit.rule.rules.LayeredArchitectureRule;
 import com.kcm.msp.dev.app.development.archunit.rule.rules.ServiceClassRule;
 import com.kcm.msp.dev.app.development.archunit.rule.rules.UnUsedClassRule;
+import com.kcm.msp.dev.app.development.archunit.rule.rules.UtilClassRule;
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeJars;
@@ -31,12 +32,21 @@ public class ProjectArchitectureRule {
   @ArchTest
   public static void controllerRule(JavaClasses classes) {
     ControllerClassRule.CLASS_SHOULD_BE_SUFFIXED_AND_ANNOTATED.check(classes);
+    ControllerClassRule.CLASS_SHOULD_RESIDE_IN_PACKAGE.check(classes);
   }
 
   @ArchTest
   public static void serviceRule(JavaClasses classes) {
     ServiceClassRule.CLASS_IMPL_SHOULD_BE_SUFFIXED_AND_ANNOTATED.check(classes);
     ServiceClassRule.CLASS_SHOULD_BE_SUFFIXED.check(classes);
+    ServiceClassRule.CLASS_SHOULD_RESIDE_IN_PACKAGE.check(classes);
+  }
+
+  @ArchTest
+  public static void utilRule(JavaClasses classes) {
+    UtilClassRule.CLASS_SHOULD_RESIDE_IN_PACKAGE.check(classes);
+    UtilClassRule.CLASS_SHOULD_BE_SUFFIXED_AND_PRIVATE.check(classes);
+    UtilClassRule.METHODS_SHOULD_BE_STATIC.check(classes);
   }
 
   @ArchTest

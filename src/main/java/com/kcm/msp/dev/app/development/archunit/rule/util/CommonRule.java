@@ -22,7 +22,7 @@ public final class CommonRule {
     throw new UnsupportedOperationException();
   }
 
-  public static ArchRule methodsShouldBePublicRule(String... packageNames) {
+  public static ArchRule methodsShouldBePublic(String... packageNames) {
     return methods()
         .that()
         .areDeclaredInClassesThat()
