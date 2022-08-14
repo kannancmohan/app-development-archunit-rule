@@ -1,4 +1,4 @@
-package com.kcm.msp.dev.app.development.archunit.rule.rules;
+package com.kcm.msp.dev.app.development.archunit.rule.regulations;
 
 import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.UTIL_NAME_ENDS;
 import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.UTIL_PACKAGE;

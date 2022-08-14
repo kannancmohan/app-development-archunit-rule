@@ -4,10 +4,10 @@ import static com.tngtech.archunit.base.DescribedPredicate.not;
 import static com.tngtech.archunit.core.domain.JavaClass.Predicates.simpleName;
 import static com.tngtech.archunit.lang.conditions.ArchPredicates.are;
 
-import com.kcm.msp.dev.app.development.archunit.rule.rules.ControllerClassRule;
-import com.kcm.msp.dev.app.development.archunit.rule.rules.LayeredArchitectureRule;
-import com.kcm.msp.dev.app.development.archunit.rule.rules.ServiceClassRule;
-import com.kcm.msp.dev.app.development.archunit.rule.rules.UtilClassRule;
+import com.kcm.msp.dev.app.development.archunit.rule.regulations.ControllerClassRule;
+import com.kcm.msp.dev.app.development.archunit.rule.regulations.LayeredArchitectureRule;
+import com.kcm.msp.dev.app.development.archunit.rule.regulations.ServiceClassRule;
+import com.kcm.msp.dev.app.development.archunit.rule.regulations.UtilClassRule;
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeJars;

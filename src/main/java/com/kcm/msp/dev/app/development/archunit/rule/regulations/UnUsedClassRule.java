@@ -1,4 +1,4 @@
-package com.kcm.msp.dev.app.development.archunit.rule.rules;
+package com.kcm.msp.dev.app.development.archunit.rule.regulations;
 
 import static com.tngtech.archunit.base.DescribedPredicate.describe;
 import static com.tngtech.archunit.base.DescribedPredicate.not;
