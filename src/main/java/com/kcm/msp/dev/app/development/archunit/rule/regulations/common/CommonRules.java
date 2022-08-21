@@ -1,4 +1,4 @@
-package com.kcm.msp.dev.app.development.archunit.rule.util;
+package com.kcm.msp.dev.app.development.archunit.rule.regulations.common;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.methods;
@@ -9,9 +9,8 @@ import com.tngtech.archunit.lang.ArchRule;
 import java.util.Arrays;
 import java.util.List;
 
-public final class CommonRule {
+public final class CommonRules {
 
-  public static final String MVN_GROUP_ID_PREFIX = "com.kcm.msp";
   public static final String CONTROLLER_PACKAGE = "..controller..";
   public static final String UTIL_PACKAGE = "..util..";
   public static final String SERVICE_PACKAGE = "..service";
@@ -23,23 +22,23 @@ public final class CommonRule {
   public static final String SERVICE_NAME_ENDS = "Service";
   public static final String SERVICE_IMPL_NAME_ENDS = "ServiceImpl";
 
-  private CommonRule() {
+  private CommonRules() {
     throw new UnsupportedOperationException();
   }
 
-  public static ArchRule appShouldAccessOnlyClassInGivenPackages(final String appPackage) {
+  public static ArchRule appShouldAccessOnlyClassInGivenPackages(final String appBasePackage) {
     return classes()
         .that()
         .areNotRecords()
         .and()
         .areNotEnums()
         .and()
-        .resideInAPackage(appPackage + "..")
+        .resideInAPackage(appBasePackage + "..")
         .should()
         .onlyAccessClassesThat()
         .resideInAnyPackage(
-            appPackage + "..",
-            ".." + appPackage + "..enums",
+            appBasePackage + "..",
+            ".." + appBasePackage + "..enums",
             "java..",
             "javax..",
             "org.slf4j..",

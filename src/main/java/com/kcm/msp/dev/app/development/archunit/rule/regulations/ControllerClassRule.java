@@ -1,7 +1,7 @@
 package com.kcm.msp.dev.app.development.archunit.rule.regulations;
 
-import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.CONTROLLER_NAME_ENDS;
-import static com.kcm.msp.dev.app.development.archunit.rule.util.CommonRule.CONTROLLER_PACKAGE;
+import static com.kcm.msp.dev.app.development.archunit.rule.regulations.common.CommonRules.CONTROLLER_NAME_ENDS;
+import static com.kcm.msp.dev.app.development.archunit.rule.regulations.common.CommonRules.CONTROLLER_PACKAGE;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
 import com.tngtech.archunit.lang.ArchRule;
