@@ -87,7 +87,7 @@ public final class CommonRules {
       final List<String> classNameSuffixList, final String description) {
     return new DescribedPredicate<>("has name ending with " + description) {
       @Override
-      public boolean apply(final JavaClass input) {
+      public boolean test(final JavaClass input) {
         final String className = input.getName();
         return classNameSuffixList.stream().anyMatch(className::endsWith);
       }

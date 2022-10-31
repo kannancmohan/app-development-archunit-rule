@@ -14,6 +14,7 @@ public class LayeredArchitectureRule {
 
   public static final ArchRule LAYER_DEPENDENCIES_ARE_RESPECTED =
       layeredArchitecture()
+          .consideringOnlyDependenciesInLayers()
           .withOptionalLayers(true)
           .layer(CONTROLLER_LAYER)
           .definedBy(CONTROLLER_PACKAGE)
